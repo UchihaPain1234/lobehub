@@ -1,2 +1,2 @@
--- Custom SQL migration file, put your code below! --
-CREATE EXTENSION IF NOT EXISTS pg_search;
+-- pg_search is deprecated and blocked on Neon. Keep this migration as a no-op
+-- so Drizzle records it while preserving compatibility with Neon-hosted databases.

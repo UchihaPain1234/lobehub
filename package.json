@@ -52,7 +52,7 @@
     "build:spa:mobile": "cross-env NODE_OPTIONS=--max-old-space-size=8192 MOBILE=true vite build",
     "build:spa:raw": "rm -rf public/_spa && vite build",
     "build:spa:workbench": "rm -rf dist/workbench public/_spa-workbench && cross-env NODE_OPTIONS=--max-old-space-size=8192 SPA_TARGET=workbench vite build",
-    "build:vercel": "cross-env-shell NODE_OPTIONS=--max-old-space-size=8192 \"bun run build:raw && bun run db:migrate\"",
+    "build:vercel": "tsx scripts/buildVercel.mts",
     "build-migrate-db": "bun run db:migrate",
     "check": "bun run .agents/scripts/check/cli.ts",
     "clean:node_modules": "bash -lc 'set -e; echo \"Removing all node_modules...\"; rm -rf node_modules; pnpm -r exec rm -rf node_modules; rm -rf apps/desktop/node_modules; echo \"All node_modules removed.\"'",
